@@ -1,4 +1,4 @@
-FROM tozd/runit:ubuntu-xenial
+FROM ros:kinetic-perception
 
 COPY ./patches /patches
 
