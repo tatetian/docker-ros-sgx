@@ -23,6 +23,7 @@ RUN apt-get update -q -q && \
  for patch in /patches/*; do patch --prefix=/patches/ -p0 --force "--input=$patch" || exit 1; done && \
  rm -rf /patches && \
  cd /tmp/linux-sgx && \
+ git checkout sgx_1.8 && \
  ./download_prebuilt.sh && \
  make && \
  make sdk_install_pkg && \
