@@ -19,11 +19,12 @@ RUN apt-get update -q -q && \
  rm -rf /tmp/dynamic-application-loader-host-interface && \
  cd /tmp && \
  git clone https://github.com/01org/linux-sgx.git && \
+ cd /tmp/linux-sgx && \
+ git checkout sgx_1.8 && \
  cd / && \
  for patch in /patches/*; do patch --prefix=/patches/ -p0 --force "--input=$patch" || exit 1; done && \
  rm -rf /patches && \
  cd /tmp/linux-sgx && \
- git checkout sgx_1.8 && \
  ./download_prebuilt.sh && \
  make && \
  make sdk_install_pkg && \
