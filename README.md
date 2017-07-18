@@ -6,8 +6,8 @@ Intel SGX [kernel module](https://github.com/01org/linux-sgx-driver) has to be i
 host and you have to provide it to the container when you run it:
 
 ```
-docker run -d --device /dev/isgx --device /dev/mei0 --name test-sgx tozd/sgx:ubuntu-xenial
-docker exec -t -i test-sgx bash
+docker run -d --device /dev/isgx --device /dev/mei0 --name test-ros-sgx tatetian/ros-sgx
+docker exec -t -i test-ros-sgx bash
 ```
 
 SDK is installed under `/opt/intel/sgxsdk`. You should do:
